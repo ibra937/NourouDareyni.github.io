@@ -1,0 +1,41 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    user VARCHAR(100) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    telephone VARCHAR(15),
+    adresse TEXT,
+    role ENUM('utilisateur', 'gp', 'admin') DEFAULT 'utilisateur',
+    date_inscription TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE commandes_produits (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    nom_produit VARCHAR(255),
+    quantite INT,
+    prix_unitaire DECIMAL(10, 2),
+    prix_total DECIMAL(10, 2),
+    status ENUM('en attente', 'en cours', 'livrée'),
+    date_inscription TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    date_livraison DATETIME,
+    adresse_livraison VARCHAR(255),
+    proprietaire VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+ALTER TABLE commandes_produits
+ADD origine VARCHAR(50),
+ADD destination VARCHAR(50);
+ADD tel_propietaire VARCHAR(15);
+MODIFY  status ENUM('en attente', 'en cours', 'livrée') DEFAULT 'en attente';
+
+CREATE TABLE suivi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    commande_id INT,
+    etat ENUM('préparée', 'expédiée', 'en transit', 'livrée'),
+    date_etat TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    localisation TEXT,
+    FOREIGN KEY (commande_id) REFERENCES commandes_produits(id)
+);
+

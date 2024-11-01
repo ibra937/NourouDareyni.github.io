@@ -1,46 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue - Service de Transport</title>
-    <link rel="stylesheet" href="VUE/interface_user/style.css">
+    <title>Document</title>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <header class="site-header">
-        <div class="log">
-            <a href="../index.html"><img src="VUE/media/logo.png" alt="" class="logo">NOUROU DARAYNI</a>
-        </div> 
-        <ul>
-        <li><a href="VUE/interface_user/Page_connexion.php" class="logout-btn">Connexion</a></li>
-        <li><a href="VUE/interface_user/Page_inscription.php" class="logout-btn">Inscription</a></li>
-        </ul>
-    </header>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#news">Actualités</a></li>
-        </ul>
-    </nav>
-
-    <!-- Sections principales -->
-    
-    <section id="news">
-        <div>
-            <h2>Actualités</h2>
-            <div class="news-item">
-                <h3>Les nouveau jours de voyages pour les GP </h3>
-                <p>Nous avons des GP disponibles et pret a ammener vos colis pour vous. <br> Voici les jours de depart et les trajets</p>
-                <div class="new">
-                    <a href="../index.html"><img src="VUE/media/news.jpg" alt="" class="new-tof"></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="about">
+<section id="about">
         <div>
             <h2>À propos</h2>
             <p>Bienvenue sur notre plateforme de services de transport, facilitant les échanges entre l'Afrique et l'Europe.</p>
@@ -53,7 +19,7 @@
                 nous nous engageons à offrir un service de qualité, tout en facilitant l'acheminement de vos biens entre l'Afrique et le reste du monde, notamment vers l'Europe et les États-Unis.
            <br><hr> </p>
         <div class="pro3">
-            <a href="index.html"><img src="VUE/media/propos3.jpg" alt="" class="propos"></a>
+            <a href="index.html"><img src="media/propos3.jpg" alt="" class="propos"></a>
         </div><br>
         <p>À propos de l'entreprise <br>
             Depuis notre création, Nourou Darayni Services s’est spécialisée dans le transport de colis et de marchandises à destination des grandes métropoles africaines et occidentales. 
@@ -63,7 +29,7 @@
        <br><br><br><hr> </p>
         </div>
         <div class="pro1">
-            <a href="index.html"><img src="VUE/media/propos1.jpg" alt="" class="propos"></a>
+            <a href="index.html"><img src="media/propos1.jpg" alt="" class="propos"></a>
         </div><br>
         <p>À propos du transport maritime de colis <br>
             Le transport maritime de colis est l'une des méthodes les plus fiables et économiques pour acheminer des marchandises à travers le monde. Grâce à des infrastructures portuaires modernes et des navires spécialement équipés, il permet de transporter une grande variété de colis, allant des petits paquets aux conteneurs volumineux. 
@@ -74,7 +40,7 @@
         </div>
         <div><br>
         <div class="pro2"><br><br>
-            <a href="index.html"><img src="VUE/media/propos2.jpg" alt="" class="propos"></a>
+            <a href="index.html"><img src="media/propos2.jpg" alt="" class="propos"></a>
         </div><br>
         <p>À propos du transport aérien de colis
             Le transport aérien de colis est la méthode la plus rapide et efficace pour expédier des marchandises sur de longues distances. 
@@ -85,31 +51,5 @@
         </p>
         </div>
     </section>
-
-    <section id="stats">
-        <div>
-            <h2>Statistiques</h2>
-            <div class="stats-box">
-                <div class="stat-item">
-                    <h3>150+</h3>
-                    <p>GP Disponibles</p>
-                </div>
-                <div class="stat-item">
-                    <h3>1200+</h3>
-                    <p>Commandes Traitées</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>&copy; 2024 Nourou Darayni service shipping compagny. Tous droits réservés.</p>
-            <ul class="social-links">
-                <li><a href="https://facebook.com">Facebook</a></li>
-                <li><a href="https://twitter.com">Twitter</a></li>
-                <li><a href="https://instagram.com">Instagram</a></li>
-            </ul>
-        </div>
-    </footer>
 </body>
 </html>

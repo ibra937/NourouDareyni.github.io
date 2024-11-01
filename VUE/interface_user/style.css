@@ -1,0 +1,495 @@
+/* Styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #800000;
+    overflow: hidden;
+    padding: 15px 0;
+    position: sticky;
+    top: 0; /* Fixe l'élément en haut lorsqu'il atteint cette position */
+    z-index: 1000; /* Pour qu'il soit au-dessus des autres éléments */
+   margin-bottom: 20px;
+    box-shadow: 0px 30px 15px rgba(50, 2, 2, 0.1); /* Pour un effet d'ombre */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    background-color: #bc0505; 
+}
+
+.logout-btn {
+    float: right;
+    margin-right: 20px;
+    background-color: #800000;
+    color: #f4f4f4;
+    padding: 14px 20px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.site-header>ul>li {
+    position: relative;
+    display: inline;
+}
+
+.user-id{
+    float: right;
+    margin-right: 10px;
+    color: #f4f4f4;
+    font-weight: bold;
+    
+}
+.site-header    a.logout-btn:hover {
+    text-decoration: none;
+    text-transform: none;
+    background-color: #f4f4f4;
+    color: #800000;
+
+}
+.logo {
+    height: 130px;
+    width: 160px;
+    margin-top: -20px;
+    margin-left: 30px;
+    margin-bottom: -50px;
+}
+
+/* Sections */
+section {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+}
+
+#about, #news, #stats {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#about h2, #news h2, #stats h2 {
+    color: #800000; /* Bordeaux */
+    margin-bottom: 20px;
+}
+
+#about p, #news p {
+    font-size: 1.1rem;
+    color: #333;
+}
+.pro1{
+    align-items: left;
+    float: left;
+    margin-right: 20px;
+}
+.pro2{
+    align-items: right;
+    float: right;
+    margin-left: 20px;
+}
+.pro2 a .propos {
+    width: 900px;
+    height: 80%;
+    float: right;
+}
+
+.pro3{
+    align-items: right;
+    float: right;
+    margin-left: 20px;
+}
+
+.news-item {
+    margin-bottom: 20px;
+}
+
+.news-item .new a .new-tof {
+    height: 95%;
+    width: 90%;
+   
+}
+
+.stats-box {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.stat-item h3 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.stat-item p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Dashboard */
+.dashboard {
+    text-align: center;
+    margin-top: -15px;
+}
+
+.dashboard-buttons {
+    margin-top: 30px;
+}
+
+.dashboard-buttons button {
+    margin-bottom: -30px;
+    width: 20%;
+    background-color: #800000;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 30px;
+    height: 150px;
+    display: inline;
+    font-size: 1.5em;
+}
+
+.dashboard-buttons button a {
+    text-decoration: none;
+}
+
+.dashboard-buttons button:hover {
+    background-color: #bc0505;
+}
+
+/* Table */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #800000; /* Bordeaux */
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+/* Styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #b2b2b2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #800020; /* Bordeaux */
+}
+
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.indicatif {
+    width: 150px;
+}
+
+form input, form textarea, form select {
+    width: 70%;
+   margin-left: 15%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form textarea {
+    height: 100px;
+}
+
+button {
+    display: block;
+    width: 30%;
+    margin-left: 35%;
+    padding: 10px;
+    background-color: #800000; /* Bordeaux */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    
+}
+
+button:hover {
+    background-color: #bc0505;
+}
+
+button a li{
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: #800020; /* Bordeaux */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin: 20px 0;
+}
+
+/* Formulaire focus */
+form input:focus, form textarea:focus, form select:focus {
+    border-color: #800020;
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 32, 0.5);
+}
+/* Styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+.site-header {
+    background-color: #333; /* Bordeaux */
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.site-header .log a {
+    color: #f4f4f4;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* Footer */
+.site-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    margin-top: 100px;
+}
+
+.site-footer .footer-content p {
+    margin-bottom: 10px;
+    margin-top: 70px;
+}
+
+.site-footer .social-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer .social-links li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.site-footer .social-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.site-footer .social-links li a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    .navbar ul li {
+        display: inline-table;
+        text-align: left;
+    }
+
+    .logo {
+        height: 70px;
+        width: 90px;
+    }
+
+    .stats-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+
+    .stat-item p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header .logo {
+        width: 70px;
+        height: 90px;
+        margin-top: -50px;
+    }
+
+    .site-header .log a {
+        color: #f4f4f4;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+       
+    }
+
+    .navbar ul li a {
+        padding: 12px;
+        font-size: 10px;
+    }
+
+    .dashboard-buttons button {
+        width: 85%;
+    }
+
+    table, th, td {
+        font-size: 10px;
+        width: 100%;
+    }
+
+    form input, form textarea, form select {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column; /* Changer à colonne pour les petits écrans */
+        align-items: center; /* Centrer les éléments */
+    }
+    
+   .site-header {
+        flex-direction: column; /* Colonne pour les éléments de l'en-tête */
+        align-items: center; /* Centrer les éléments */
+    }
+
+    .logout-btn {
+        margin-top: 30px; /* Espacement pour le bouton de déconnexion */
+        width: auto;
+        height: 45px;
+        
+    }
+    .user-id {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+}
+
+/* Styles de base pour le tableau */
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px 15px;
+    background-color: white;
+    overflow-x: auto; /* Permet le défilement horizontal sur les petits écrans */
+    overflow-x: auto; /* Permet le défilement horizontal */
+    white-space: nowrap; /* Évite le retour à la ligne pour les cellules */
+    display: block;
+}
+
+/* Styles pour les bordures du tableau */
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+/* Styles pour les cellules du tableau */
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styles pour les en-têtes */
+th {
+    background-color: #800000; /* Bordeaux */
+    color: white;
+}
+
+/* Styles pour les lignes des cellules */
+td {
+    background-color: #f9f9f9;
+}
+
+
+
