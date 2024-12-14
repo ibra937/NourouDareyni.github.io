@@ -54,5 +54,57 @@
                 exit(); 
              }
         }
+
+        function Mettre_jourad($username, $email, $adress, $user_id){
+            include 'connexionDB.php';
+
+            try{
+                $sql = "UPDATE users SET user = :user, email = :email, adresse = :adresse WHERE id = :user_id";
+                $up = $conn -> prepare($sql);
+                $up->bindParam(':user', $username);
+                $up->bindParam(':email', $email);
+                $up->bindParam(':adresse', $adress);
+                $up->bindParam(':user_id', $user_id);
+                $up->execute();
+                
+                if($up->execute()){
+                    $mess="Mise a jour reussie !";
+                    header("Location: ../VUE/interface_admin/update_users.php?update=$mess"); 
+                    exit();
+                }else{
+                    $mess="Mise a jour echoué !";
+                    header("Location: ../VUE/interface_admin/update_users.php?update=$mess");  
+                    exit();
+                }
+            }catch (PDOException $e){
+                $mess="Erreur !";
+                header("Location: ../VUE/interface_admin/update_users.php?update=$mess");  
+                exit();
+            }
+        }
+
+        function motpassad($password1, $password2, $user_id){
+            include 'connexionDB.php';
+            
+            if($password1 == $password2) {
+                $password = $password1;
+                $password_crypt = password_hash($password, PASSWORD_BCRYPT);
+                
+                $sql = "UPDATE users SET password = :password WHERE id = :user_id";
+                $pass = $conn->prepare($sql);
+                $pass->bindParam(':password', $password_crypt); // Utiliser le mot de passe haché
+                $pass->bindParam(':user_id', $user_id); // Assurez-vous que $user_id existe et est bien défini
+                
+                if ($pass->execute()) {
+                    $mess = "Mot de passe changé avec succès!";
+                    header("Location: ../VUE/interface_admin/page_users.php?pass=$mess");
+                    exit();
+                } else {
+                    $mess = "Mise à jour échouée !";
+                    header("Location: ../VUE/interface_admin/page_users.php?pass=$mess");
+                    exit();
+                }
+            }
+        }
     }
 ?>

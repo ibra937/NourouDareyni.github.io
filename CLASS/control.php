@@ -14,14 +14,26 @@
     $gp = new gp_commandes();
 
     if($control=="inscription"){
-        $name=strtoupper($_POST['name']);
+        $prenom=ucwords($_POST['prenom']);
+        $nom=strtoupper($_POST['nom']);
+        $name=$prenom." ".$nom;
         $username=strtolower($_POST['username']);
         $email=$_POST['email'];
-        $phone=$_POST['phone'];
+        $indic=$_POST['indicatif'];
+        $num=$_POST['phone'];
+        $phone=$indic.$num;
         $adress=strtolower($_POST['adress']);
-        $password=$_POST['password'];
+        $password0=$_POST['password0'];
+        $password1=$_POST['password1'];
         
-        $user -> Inscription($name, $username, $email, $phone, $adress, $password);
+        $user -> Inscription($name, $username, $email, $phone, $adress, $password0, $password1);
+    }
+
+    if ($control == "verify_otp") {
+        session_start();
+        $otp = $_POST['otp'];
+    
+        $user -> verify_otp($otp);
     }
     
     if($control=="connexion"){
@@ -30,14 +42,30 @@
         
         $user -> Connexion($username, $password);
     }
+    
+    if ($control == "recup") {
+        $mail = $_POST['mail'];
+    
+        $user -> recup_mail($mail);
+    }
 
+    if ($control == "newpass") {
+        $password1=$_POST['password1'];
+        $password2=$_POST['password2'];
+        $mail = $_POST['mail'];
+    
+        $user -> recup_pass($password1,$password2,$mail);
+    }
+    
     if($control=="creer_commande"){
         $produits=$_POST['product'];
         $quantite=$_POST['quantity'];
         $origine=$_POST['origine'];
         $destination=$_POST['destination'];
         $proprietaire=$_POST['proprietaire_name'];
-        $phone=$_POST['proprietaire_phone'];
+        $indic=$_POST['indicatif'];
+        $num=$_POST['phone'];
+        $phone=$indic.$num;
         $description=$_POST['notes'];
 
         $commande -> creer_commande($produits, $quantite, $origine, $destination, $proprietaire, $phone, $description);
@@ -51,7 +79,16 @@
         
         $user -> mettre_jour($username, $email, $adress, $user_id);
     }
-
+  
+    if($control=="mettre_jourad"){
+        $username=$_POST['username'];
+        $email=$_POST['email'];
+        $adress=$_POST['adresse'];
+        $user_id=$_POST['user_id'];
+        
+        $del -> mettre_jourad($username, $email, $adress, $user_id);
+    }
+  
     if($control=="gpmettre_jour"){
         $username=$_POST['username'];
         $email=$_POST['email'];
@@ -62,19 +99,29 @@
     }
 
     if($control=="motpass"){
+        $password0=$_POST['password0'];
+        $password1=$_POST['password1'];
+        $password2=$_POST['password2'];
+        $user_id=$_POST['user_id'];
+        
+        $user -> motpass($password0, $password1, $password2, $user_id);
+    }
+    
+    if($control=="gpmotpass"){
+        $password0=$_POST['password0'];
         $password1=$_POST['password1'];
         $password2=$_POST['password2'];
         $user_id=$_POST['user_id'];
 
-       $user -> motpass($password1, $password2, $user_id);
+       $user -> motpassgp($password0, $password1, $password2, $user_id);
     }
 
-    if($control=="gpmotpass"){
+    if($control=="motpassad"){
         $password1=$_POST['password1'];
         $password2=$_POST['password2'];
         $user_id=$_POST['user_id'];
 
-       $user -> motpassgp($password1, $password2, $user_id);
+       $del -> motpassad($password1, $password2, $user_id);
     }
 
     if($control=="delete"){
@@ -134,7 +181,7 @@
         $com -> status_commandes($id, $status);
     }elseif($control=="livrée") {
         $id=$_POST['status'];
-        $status="livrée";
+        $status="livree";
 
         $com -> status_commandes($id, $status);
     }
@@ -166,7 +213,7 @@
         $gp -> status_commandes($id, $status);
     }elseif($control=="gp livrée") {
         $id=$_POST['status'];
-        $status="livrée";
+        $status="livree";
 
         $gp -> status_commandes($id, $status);
     }
@@ -181,5 +228,20 @@
         $id=$_POST['del'];
 
         $com -> delete_commandes($id);
+    }
+
+    if($control=="delete_user"){
+        $id=$_POST['del'];
+
+        $commande -> delete_commandes($id);
+    }
+
+    if($control=="contact"){
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+        $subject = htmlspecialchars($_POST['subject']);
+        $message = htmlspecialchars($_POST['message']);
+
+        $user -> contact($name, $email, $subject, $message);
     }
 ?>

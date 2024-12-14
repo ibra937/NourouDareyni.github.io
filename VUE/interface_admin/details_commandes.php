@@ -14,8 +14,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_admin.css">
-    <title>Document</title>
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
+    <link rel="stylesheet" href="Style_admin.css">
+    <title>Commandes - Nourou Darayni Services</title>
 </head>
 <body>
     <div class="admin-container">
@@ -23,12 +24,41 @@
     
         <div class="main-content">
             <h2>Details des commandes</h2>
+            <?php
+                try {
+                    // Première requête pour récupérer gp_id
+                    $sql = "SELECT gp_id FROM commandes_produits WHERE id = ?"; 
+                    $gp_id_stmt = $conn->prepare($sql);
+                    $gp_id_stmt->execute([$id]);
+                
+                    if ($gp_id_stmt->rowCount() > 0) {
+                        $g = $gp_id_stmt->fetch(PDO::FETCH_ASSOC);
+                    
+                        // Deuxième requête pour récupérer nom et id de l'utilisateur
+                        $sql = "SELECT nom, id FROM users WHERE id = ?"; 
+                        $gp_stmt = $conn->prepare($sql);
+                        $gp_stmt->execute([$g['gp_id']]); // Correction ici : $g['gp_id'] doit être utilisé
+                    
+                        if ($gp_stmt->rowCount() > 0) {
+                            $p = $gp_stmt->fetch(PDO::FETCH_ASSOC);
+                            $gp_choisi = htmlspecialchars($p['id']) . ")  " . htmlspecialchars($p['nom']);
+                        } else {
+                            $gp_choisi = "GP Disponibles";
+                        }
+                    } else {
+                        $gp_choisi = "GP Disponibles";
+                    }
+                } catch (PDOException $e) {
+                    // Gérer les exceptions PDO pour éviter les fuites d'informations sensibles
+                    $gp_choisi = "Erreur : " . htmlspecialchars($e->getMessage());
+                }
+            ?>
 
             <div class="container">
                 <h2>Affectation des commandes :</h2><br>
                 <form action="../../CLASS/control.php" method="POST">
                     <select id="gp" name="gp" required>
-                        <option disabled selected>GP disponibles</option>
+                        <option disabled selected><?php echo($gp_choisi);?></option>
                         <?php
                             $sql = "SELECT nom, id FROM users WHERE role='gp'"; // Remplacez 'commandes' par le nom de votre table
                             $suivre = $conn->prepare($sql);
@@ -37,7 +67,7 @@
                             // Boucle à travers les résultats et affichage
                             while ($row = $suivre->fetch(PDO::FETCH_ASSOC)) {
                                
-                                echo '<option value="'. htmlspecialchars($row['id']).'">'  .htmlspecialchars($row['nom']) . '</option>';
+                                echo '<option value="'. htmlspecialchars($row['id']).'">'  .htmlspecialchars($row['id']).")  ". htmlspecialchars($row['nom']) . '</option>';
                             }
                         ?>
                     </select>

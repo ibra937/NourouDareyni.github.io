@@ -11,23 +11,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
+    <link rel="stylesheet" href="style_gp.css">
+    <title>Confirmation - Nourou Darayni Services</title>
 </head>
 <body>
     
     <?php
-    include 'navbar.php';
     $control = $_POST['control'];
     $id=$_POST['del'];
     ?>
     <div class='container'>
-    <h2> Etes-vous sure de vouloir supprimer cette commandes?</h2>
-    <form action='../../CLASS/control.php' method='POST'>
-    <input type="hidden" name="control" value="<?php echo($control); ?>">
-    <input type="hidden" name="del" value="<?php echo($id); ?>">
-    <button class='del-btn'>Oui</button>
-    </form><br>
-    <button class='del-btn'><a href='gestion_commandes.php'>Non</a></button>
+        <img src="../media/Confirmed-amico.png" style="width: 50%; height: 300px; margin-left: 25%;">
+        <h2> Etes-vous sure de vouloir supprimer cette commandes?</h2>
+        <form action='../../CLASS/control.php' method='POST'>
+            <input type="hidden" name="control" value="<?php echo($control); ?>">
+            <input type="hidden" name="del" value="<?php echo($id); ?>">
+            <button class='del-btn'>Oui</button>
+        </form><br>
+        <button class='del-btn'><a href='gestion_commandes.php'>Non</a></button>
     </div>"
     <?php include 'footer.php'; ?>
 </body>

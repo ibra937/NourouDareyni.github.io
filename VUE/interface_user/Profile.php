@@ -12,16 +12,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Profil</title>
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
     <link rel="stylesheet" href="style.css">
+    <title>Mon Profil</title>
 </head>
 <body>
 
     <!-- Navbar -->
     <?php include 'nav_bar.php'; ?>
-
+    <div class="me">
+    <?php
+        if (!empty($_GET['pass'])) {
+            $mess = htmlspecialchars($_GET['pass']);
+            echo($mess);     
+        }
+        if (!empty($_GET['connexion'])) {
+            $mess = htmlspecialchars($_GET['connexion']);
+            echo($mess);     
+        }
+        if (!empty($_GET['update'])) {
+            $mess = htmlspecialchars($_GET['update']);
+            echo($mess);     
+        }
+    ?>
+    </div>
     <!-- Profil utilisateur -->
-    <div class="container">
+    <div class="container-form">
         <?php
             if (!empty($_GET['connexion'])) {
                 $mess = htmlspecialchars($_GET['connexion']);
@@ -52,7 +68,7 @@
         ?>
     </div>
 
-    <div class="container">
+    <div class="container-form">
         <?php
             if (!empty($_GET['update'])) {
                 $mess = htmlspecialchars($_GET['update']);
@@ -76,7 +92,7 @@
         </form>
     </div>
     
-    <div class="container">
+    <div class="container-form">
         <?php
             if (!empty($_GET['pass'])) {
                 $mess = htmlspecialchars($_GET['pass']);
@@ -85,6 +101,9 @@
         ?>
         <h2>Modifier mon mots de passe :</h2>
         <form action="../../CLASS/control.php" method="post">
+            <label for="password">Mot de passe actuel:</label>
+            <input type="password" id="password" name="password0" required>
+
             <label for="password">Nouveau mot de passe :</label>
             <input type="password" id="password" name="password1" required>
             
@@ -93,7 +112,7 @@
 
             <input type="hidden" name="control" value="motpass">
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-            <button type="submit">Mettre à jour</button>
+            <button type="submit">Changer</button>
         </form>
     </div>
 

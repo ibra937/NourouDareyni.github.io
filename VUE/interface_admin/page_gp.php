@@ -11,8 +11,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_admin.css">
-    <title>Document</title>
+    <link rel="shortcut icon" type="x-icon" href="VUE/media/logo-tete.png">
+    <link rel="stylesheet" href="Style_admin.css">
+    <title>Utilisateurs - Nourou Darayni Services</title>
 </head>
 <body>
     <div class="admin-container">
@@ -51,7 +52,7 @@
                 $debut=($page-1)*$nbr;
                 
                 // Requête pour récupérer les commandes
-                $sql = "SELECT id, user, nom, telephone, adresse, date_inscription FROM users WHERE role='gp' limit $debut,$nbr"; // Remplacez 'commandes' par le nom de votre table
+                $sql = "SELECT id, user, nom, telephone, adresse, date_inscription FROM users WHERE role='gp' ORDER BY id DESC limit $debut,$nbr"; // Remplacez 'commandes' par le nom de votre table
                 $suivre = $conn->prepare($sql);
                 $suivre->execute();
                 

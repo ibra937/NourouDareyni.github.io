@@ -12,8 +12,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Profil</title>
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
     <link rel="stylesheet" href="style_gp.css">
+    <title>Mon Profil - Nourou Darayni Services</title>
 </head>
 <body>
 
@@ -21,7 +22,7 @@
     <?php include 'navbar.php'; ?>
 
     <!-- Profil utilisateur -->
-    <div class="container">
+    <div class="container-form">
         <?php
             if (!empty($_GET['connexion'])) {
                 $mess = htmlspecialchars($_GET['connexion']);
@@ -52,7 +53,7 @@
         ?>
     </div>
 
-    <div class="container">
+    <div class="container-form">
         <?php
             if (!empty($_GET['update'])) {
                 $mess = htmlspecialchars($_GET['update']);
@@ -76,7 +77,7 @@
         </form>
     </div>
     
-    <div class="container">
+    <div class="container-form">
         <?php
             if (!empty($_GET['pass'])) {
                 $mess = htmlspecialchars($_GET['pass']);
@@ -85,6 +86,9 @@
         ?>
         <h2>Modifier mon mots de passe :</h2>
         <form action="../../CLASS/control.php" method="post">
+            <label for="password">Mot de passe actuel:</label>
+            <input type="password" id="password" name="password0" required>
+
             <label for="password">Nouveau mot de passe :</label>
             <input type="password" id="password" name="password1" required>
             

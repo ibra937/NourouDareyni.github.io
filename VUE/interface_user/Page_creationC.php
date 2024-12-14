@@ -10,15 +10,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer une Commande</title>
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
     <link rel="stylesheet" href="style.css">
+    <title>Créer une Commande - Nourou Darayni Services</title> 
 </head>
 <body>
 
     <!-- Navbar -->
     <?php include 'nav_bar.php'; ?>
     <!-- Formulaire de création de commande -->
-    <div class="container">
+    <div class="container-form">
         <h2>Créer une nouvelle commande</h2>
         <form action="../../CLASS/control.php" method="POST">
 
@@ -34,11 +35,15 @@
             <label for="destination">Destination :</label>
             <input type="text" id="destination" name="destination" placeholder="Ville ou pays de destination" required>
    
-            <label for="proprietaire_name">Nom du proprietaire :</label>
+            <label for="proprietaire_name">Nom du destinataire :</label>
             <input type="text" id="proprietaire_name" name="proprietaire_name" required>
 
-            <label for="proprietaire_phone">Numero du proprietaire :</label>
-            <input type="text" id="proprietaire_phone" name="proprietaire_phone" required>
+            <label for="proprietaire_phone">Numero du destinataire :</label>
+            <select id="indicatif" name="indicatif" required class="indicatif">
+                <option value="+221">Senegal(+221)</option>
+                <option value="+1">Usa(+1)</option>
+            </select>
+            <input type="text" id="proprietaire_phone" name="num" required class="num">
 
             <label for="notes">Instructions supplémentaires :</label>
             <textarea id="notes" name="notes" placeholder="Ajouter des instructions spéciales ici..."></textarea>
@@ -48,6 +53,6 @@
 
         </form>
     </div>
-    <?php include 'footer.php'; ?>
+    <?php include 'contactUs.php'; include 'footer.php'; ?>
 </body>
 </html>

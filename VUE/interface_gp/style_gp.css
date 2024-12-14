@@ -11,6 +11,25 @@
     padding: 20px;
 }
 
+.container-form {
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 20%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar */
+details {
+    display: none;
+}
+.cache{
+    display: none;
+}
+
 /* Navbar */
 .navbar {
     background-color: #800000;
@@ -19,31 +38,53 @@
     position: sticky;
     top: 0; /* Fixe l'élément en haut lorsqu'il atteint cette position */
     z-index: 1000; /* Pour qu'il soit au-dessus des autres éléments */
-   margin-bottom: 20px;
-    box-shadow: 0px 30px 15px rgba(50, 2, 2, 0.1); /* Pour un effet d'ombre */
 }
 
 .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
 
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
 .navbar ul li {
-    display: inline;
+    position: relative;
+    list-style: none;
+    margin: 0 20px;
+    display: inline-block;
 }
 
 .navbar ul li a {
     color: #fff;
-    padding: 14px 20px;
     text-decoration: none;
     font-weight: bold;
 }
 
-.navbar ul li a:hover {
-    background-color: #bc0505; 
+.navbar ul li a::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #f4f4f4;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s;
 }
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+.menu{
+    display: none;
+    width: 30px;
+    cursor: pointer;
+    margin: 20px 20px;
+}
+
+.menuV{
+    display: none;
+}
+
 
 .logout-btn {
     float: right;
@@ -189,16 +230,18 @@ section {
 
 /* Dashboard */
 .dashboard {
+    list-style: none;
     text-align: center;
     margin-top: -15px;
+    margin-bottom: 30px;
 }
 
 .dashboard-buttons {
-    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 .dashboard-buttons button {
-    margin-bottom: -30px;
     width: 20%;
     background-color: #800000;
     color: white;
@@ -416,6 +459,7 @@ form input:focus, form textarea:focus, form select:focus {
 
 /* Header */
 .site-header {
+    list-style: none;
     background-color: #333; /* Bordeaux */
     color: white;
     text-align: center;
@@ -470,6 +514,34 @@ form input:focus, form textarea:focus, form select:focus {
     text-decoration: underline;
 }
 
+.pagination a {
+    margin: 0 1%;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #f4f4f4;
+    color: #800000;
+    border: solid 2px;
+    border-radius: 4px;
+}
+
+.pagination a:hover {
+    background-color: #800000;
+    color: #f4f4f4;
+}
+
+.pagination a.active {
+    background-color: #800000; /* Couleur pour la page active (ici vert) */
+    color: white;
+    border-radius: 4px;
+}
+
+.pagination strong {
+    margin: 0 5px;
+    padding: 8px 16px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 4px;
+}
 @media (max-width: 768px) {
     .container {
         max-width: 90%;
@@ -479,6 +551,27 @@ form input:focus, form textarea:focus, form select:focus {
     .navbar ul li {
         display: inline-table;
         text-align: left;
+    }
+
+    .widget {
+        background-color: #2d2d2d;
+        color: white;
+        margin-left: 3%;
+        padding: 20px;
+        border-radius: 8px;
+        width: calc(30% - 25px); /* Ajustement pour deux colonnes */
+        height: 100px;
+        text-align: center;
+    }
+    
+    .widget h3 {
+        margin-bottom: 10px;
+        font-size: 0.5em;
+    }
+    
+    .widget p {
+        font-size: 1em;
+        font-weight: bold;
     }
 
     .logo {
@@ -542,22 +635,155 @@ form input:focus, form textarea:focus, form select:focus {
         flex-direction: column; /* Changer à colonne pour les petits écrans */
         align-items: center; /* Centrer les éléments */
     }
+
+    .navbar{
+        position: sticky;
+        top: 0; /* Fixe l'élément en haut lorsqu'il atteint cette position */
+        z-index: 1000;
+        height: max-content;
+    }
+
+    .nave {
+        display: none;
+    }
+
+    .container-form {
+    width: 90%;
+    margin: 50px 5%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    label {
+        margin-bottom: 8px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    input, select {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        height: 35px;
+    }
+
+    .tab_btn {
+        font-size: 10px;
+        width: 90%;
+    }
+
+    select {
+        font-size: 10px;
+    }
+
+    button {
+        font-size: 10px;
+    }
+
+    /* Style pour le menu vertical */
+.menuV {
+    display: flex;
     
-   .site-header {
-        flex-direction: column; /* Colonne pour les éléments de l'en-tête */
-        align-items: center; /* Centrer les éléments */
+    width: 100%; /* Largeur du menu */
+    height: 80vh;
+    border-radius: 5px;
+    margin-left: -100%;
+}
+.active{
+    margin-left: 0;
+}
+
+.menuV ul {
+    width: 100%;
+    height: 100vh;
+    align-items: center; /* Aligne les liens à gauche */
+    display: flex;
+    flex-direction: column; /* Affiche les éléments en colonnes */
+    text-align: center;
+    align-content: center;
+    list-style: none; /* Supprime les puces */
+    background-color: #800000;
+    padding: 0;
+    margin: 0;
+}
+
+.menuV ul li a {
+    text-decoration: none; /* Supprime le soulignement */
+    color: white; /* Couleur du texte */
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block; /* Le lien occupe tout l'espace cliquable */
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+    .menu {
+        display: block; /* Affiche le bouton menu */
+        margin-top: 20px;
+
+    }
+
+    details {
+    display: block;
+    margin-top: -25px;
+    margin-bottom: 10px;
+    padding: 10px;
+    }
+
+    summary {
+        width: 70px;
+        margin-top: -25px;
+        height: 70px;
+    }
+
+    .cache {
+        display: block;
+    }
+    
+    .site-header {
+        align-items: center;
+        list-style: none;
+        height: 100px;
+        
+    }
+    .site-header .logo {
+        width: 100px;
+        height: 90px;
+        
+    }
+
+
+    .site-header .log a {
+        display: block;
+        color: #f4f4f4;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
     }
 
     .logout-btn {
-        margin-top: 30px; /* Espacement pour le bouton de déconnexion */
-        width: auto;
-        height: 45px;
+        display: none;
         
     }
     .user-id {
-        font-size: 14px;
-        margin-top: 15px;
+        list-style: none;
+        font-size: 20px;
+        margin-top: 30px;
+        justify-content: center;
     }
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
     /* Styles de base pour le tableau */
     table {
         width: 94%;
@@ -606,34 +832,6 @@ form input:focus, form textarea:focus, form select:focus {
     }
 }
 
-.pagination a {
-    margin: 0 1%;
-    padding: 8px 16px;
-    text-decoration: none;
-    background-color: #f4f4f4;
-    color: #800000;
-    border: solid 2px;
-    border-radius: 4px;
-}
-
-.pagination a:hover {
-    background-color: #800000;
-    color: #f4f4f4;
-}
-
-.pagination a.active {
-    background-color: #800000; /* Couleur pour la page active (ici vert) */
-    color: white;
-    border-radius: 4px;
-}
-
-.pagination strong {
-    margin: 0 5px;
-    padding: 8px 16px;
-    background-color: #0056b3;
-    color: white;
-    border-radius: 4px;
-}
 
 
 

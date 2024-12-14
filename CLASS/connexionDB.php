@@ -1,7 +1,10 @@
 <?php
-    $dns = 'mysql:host=localhost;dbname=gpdb';
-    $user = 'Ibra';
-    $pass = 'maiseck23';
+    $dns = 'mysql:host=sql103.infinityfree.com;dbname=if0_37716375_gpdb';
+    $user = 'if0_37716375';
+    $pass = 'MAIseck2304';
+    /*$dns = 'mysql:host=localhost;dbname=GPDB';
+    $user = 'root';
+    $pass = '';*/
     
     try {
         $conn = new PDO($dns, $user, $pass);

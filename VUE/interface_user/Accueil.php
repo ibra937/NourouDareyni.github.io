@@ -12,8 +12,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Service de Transport</title>
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
     <link rel="stylesheet" href="style.css">
+    <title>Accueil - Service de Transport</title>
 </head>
 <body>
     <!-- Navbar -->
@@ -28,19 +29,23 @@
             </div>
         
     </section>
-    <?php include 'Actu.php'; ?>
+    
 
     <!-- Statistiques dynamiques -->
     <section id="stats">
-        <div class="container">
+        <div class="container-form">
             <h2>Statistiques</h2>
             <div class="stats-box">
                 <div class="stat-item">
-                    <h3>150+</h3>
+                    <h3>15+</h3>
                     <p>GP Disponibles</p>
                 </div>
                 <div class="stat-item">
-                    <h3>1200+</h3>
+                    <h3>50+</h3>
+                    <p>conteneurs débarqués</p>
+                </div>
+                <div class="stat-item">
+                    <h3>120+</h3>
                     <p>Commandes Traitées</p>
                 </div>
             </div>

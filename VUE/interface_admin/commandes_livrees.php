@@ -11,8 +11,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_admin.css">
-    <title>Document</title>
+    <link rel="shortcut icon" type="x-icon" href="VUE/media/logo-tete.png">
+    <link rel="stylesheet" href="Style_admin.css">
+    <title>Commandes - Nourou Darayni Services</title>
 </head>
 <body>
     <div class="admin-container">
@@ -38,7 +39,7 @@
                     <?php
                 include '../../CLASS/connexionDB.php'; // Inclure le fichier de connexion
                 
-                $sql_count = "SELECT COUNT(*) as total_commandes FROM commandes_produits WHERE status='livrée'";
+                $sql_count = "SELECT COUNT(*) as total_commandes FROM commandes_produits WHERE status='livree'";
                 $count = $conn->prepare($sql_count);
                 $count->execute();
                 $total_users = $count->fetchAll();
@@ -52,7 +53,7 @@
                 $debut=($page-1)*$nbr;
                 
                 // Requête pour récupérer les commandes
-                $sql = "SELECT id, user_id, nom_produit, quantite, destination, date_commande FROM commandes_produits WHERE status='livrée' limit $debut,$nbr"; // Remplacez 'commandes' par le nom de votre table
+                $sql = "SELECT id, user_id, nom_produit, quantite, destination, date_commande FROM commandes_produits WHERE status='livree' ORDER BY id DESC limit $debut,$nbr"; // Remplacez 'commandes' par le nom de votre table
                 $suivre = $conn->prepare($sql);
                 $suivre->execute();
                 

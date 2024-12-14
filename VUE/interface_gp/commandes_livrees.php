@@ -11,8 +11,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
     <link rel="stylesheet" href="style_gp.css">
-    <title>Document</title>
+    <title>Commandes - Nourou Darayni Services</title>
 </head>
 <body>
     <div class="admin-container">
@@ -20,9 +21,9 @@
         
         <div class="main-content">   
             <h2>Gestion des commandes</h2><hr><br>
-            <h3 class="h3">Commandes livrées par GP: <?php echo($_SESSION['user_name']); ?></h3>
             <button class="btn"><a href="commandes_cours.php">Commandes en cours</a></button>
             <button class="btn"><a href="gestion_commandes.php">Comnnades en attentes</a></button>
+            <h3 class="h3">Commandes livrées par GP: <?php echo($_SESSION['user_name']); ?></h3>
                 <table>
                     <thead>
                         <tr>
@@ -39,7 +40,7 @@
                     <?php
                 include '../../CLASS/connexionDB.php'; // Inclure le fichier de connexion
                 
-                $sql_count = "SELECT COUNT(*) as total_commandes FROM commandes_produits WHERE status='livrée' AND gp_id= ?";
+                $sql_count = "SELECT COUNT(*) as total_commandes FROM commandes_produits WHERE status='livree' AND gp_id= ?";
                 $count = $conn->prepare($sql_count);
                 $count->execute([$user_id]);
                 $total_users = $count->fetchAll();
@@ -53,7 +54,7 @@
                 $debut=($page-1)*$nbr;
                 
                 // Requête pour récupérer les commandes
-                $sql = "SELECT id, user_id, nom_produit, quantite, destination, status, date_commande FROM commandes_produits WHERE status='livrée' AND gp_id=? limit $debut,$nbr"; // Remplacez 'commandes' par le nom de votre table
+                $sql = "SELECT id, user_id, nom_produit, quantite, destination, status, date_commande FROM commandes_produits WHERE status='livree' AND gp_id=? ORDER BY id DESC limit $debut,$nbr"; // Remplacez 'commandes' par le nom de votre table
                 $suivre = $conn->prepare($sql);
                 $suivre->execute([$user_id]);
                 

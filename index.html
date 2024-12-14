@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue - Service de Transport</title>
+    <link rel="shortcut icon" type="x-icon" href="VUE/media/logo-tete.png">
     <link rel="stylesheet" href="VUE/interface_user/style.css">
+    <title>Nourou Darayni Services - Bienvenue</title>
 </head>
 <body>
 
     <!-- Navbar -->
     <header class="site-header">
         <div class="log">
-            <a href="../index.html"><img src="VUE/media/logo.png" alt="" class="logo">NOUROU DARAYNI</a>
+            <a href="index.html"><img src="VUE/media/logo.png" alt="" class="logo">NOUROU DARAYNI</a>
         </div> 
         <ul>
         <li><a href="VUE/interface_user/Page_connexion.php" class="logout-btn">Connexion</a></li>
@@ -19,74 +20,76 @@
         </ul>
     </header>
     <nav class="navbar">
-        <ul>
+        <ul class="nave">
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#news">Actualités</a></li>
+            <li><a href="VUE/interface_user/Actu.php">Actualités</a></li>
+            <li><a href="VUE/interface_user/propos.php">À propos</a></li>
+            <li><a href="VUE/interface_user/contactUs.php">Contacts</a></li>
         </ul>
+    <div class="cache">
+    <details>
+        <summary>
+        <img src="VUE/media/menu1.png" class="menu">
+        </summary>
+        <div class="menuV">
+            <ul class="ulmenu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="VUE/interface_user/Actu.php">Actualités</a></li>
+                <li><a href="VUE/interface_user/propos.php">À propos</a></li>
+                <li><a href="VUE/interface_user/contactUs.php">Contacts</a></li>
+                <button onclick="window.location.href='VUE/interface_user/Page_connexion.php';">Connexion</button>
+                <button onclick="window.location.href='VUE/interface_user/Page_inscription.php';">Inscription</button>
+            </ul>
+        </div>
+    </details>
+    </div>
     </nav>
-
     <!-- Sections principales -->
-    
-    <section id="news">
-        <div>
-            <h2>Actualités</h2>
-            <div class="news-item">
-                <h3>Les nouveau jours de voyages pour les GP </h3>
-                <p>Nous avons des GP disponibles et pret a ammener vos colis pour vous. <br> Voici les jours de depart et les trajets</p>
-                <div class="new">
-                    <a href="../index.html"><img src="VUE/media/news.jpg" alt="" class="new-tof"></a>
-                </div>
+
+    <div class="tete">
+        <div class="text-tete">
+            <h1>Transportez vos colis en toute confiance.</h1>
+            <p>Des solutions rapides, fiables et adaptées à vos besoins.</p>
+            <div class="button">
+                <button onclick="window.location.href='VUE/interface_user/Page_connexion.php';">Faire une reservation</button>
             </div>
         </div>
-    </section>
-    <section id="about">
-        <div>
-            <h2>À propos</h2>
-            <p>Bienvenue sur notre plateforme de services de transport, facilitant les échanges entre l'Afrique et l'Europe.</p>
-        </div>
-        <div>
-            <p>À propos du transport maritime de colis
-                Le transport maritime de colis est l'une des méthodes les plus fiables et économiques pour acheminer des marchandises à travers le monde. Grâce à des infrastructures portuaires modernes et des navires spécialement équipés, il permet de transporter une grande variété de colis, allant des petits paquets aux conteneurs volumineux. 
-                Ce mode de transport est particulièrement apprécié pour sa capacité à traiter de grandes quantités de marchandises tout en assurant une sécurité optimale et un suivi efficace. 
-                Que ce soit pour des envois personnels ou commerciaux, le transport maritime offre une solution adaptée aux besoins des clients, tout en garantissant des délais raisonnables et des tarifs compétitifs. En tant qu'acteur dans ce domaine, 
-                nous nous engageons à offrir un service de qualité, tout en facilitant l'acheminement de vos biens entre l'Afrique et le reste du monde, notamment vers l'Europe et les États-Unis.
-           <br><hr> </p>
-        <div class="pro3">
-            <a href="index.html"><img src="VUE/media/propos3.jpg" alt="" class="propos"></a>
-        </div><br>
-        <p>À propos de l'entreprise <br>
-            Depuis notre création, Nourou Darayni Services s’est spécialisée dans le transport de colis et de marchandises à destination des grandes métropoles africaines et occidentales. 
-            Grâce à une équipe dédiée et à des partenaires fiables, nous nous engageons à offrir un service de qualité, que ce soit par voie aérienne ou maritime. En tant qu’entreprise innovante, nous combinons expertise locale et réseau international pour répondre aux besoins spécifiques de notre clientèle. 
-            Notre priorité est de garantir la sécurité et la rapidité de vos envois tout en assurant un suivi rigoureux à chaque étape. 
-            Que vous soyez un particulier ou une entreprise, nous nous adaptons à vos exigences pour faire de vos livraisons un processus sans souci.
-       <br><br><br><hr> </p>
-        </div>
-        <div class="pro1">
-            <a href="index.html"><img src="VUE/media/propos1.jpg" alt="" class="propos"></a>
-        </div><br>
-        <p>À propos du transport maritime de colis <br>
-            Le transport maritime de colis est l'une des méthodes les plus fiables et économiques pour acheminer des marchandises à travers le monde. Grâce à des infrastructures portuaires modernes et des navires spécialement équipés, il permet de transporter une grande variété de colis, allant des petits paquets aux conteneurs volumineux. 
-            Ce mode de transport est particulièrement apprécié pour sa capacité à traiter de grandes quantités de marchandises tout en assurant une sécurité optimale et un suivi efficace. 
-            Que ce soit pour des envois personnels ou commerciaux, le transport maritime offre une solution adaptée aux besoins des clients, tout en garantissant des délais raisonnables et des tarifs compétitifs. En tant qu'acteur dans ce domaine, 
-            nous nous engageons à offrir un service de qualité, tout en facilitant l'acheminement de vos biens entre l'Afrique et le reste du monde, notamment vers l'Europe et les États-Unis.
-        <br><br><br><hr></p>
-        </div>
-        <div><br>
-        <div class="pro2"><br><br>
-            <a href="index.html"><img src="VUE/media/propos2.jpg" alt="" class="propos"></a>
-        </div><br>
-        <p>À propos du transport aérien de colis
-            Le transport aérien de colis est la méthode la plus rapide et efficace pour expédier des marchandises sur de longues distances. 
-            Grâce à une infrastructure aérienne internationale bien établie, il permet de livrer des colis dans les délais les plus courts, souvent en moins de 48 heures, reliant rapidement les continents. 
-            Ce mode de transport est particulièrement adapté aux envois urgents, aux produits de valeur ou sensibles, et offre un haut niveau de sécurité tout au long du processus. 
-            En tant qu'expert dans le transport aérien, nous nous engageons à assurer la rapidité, la fiabilité, et le suivi de chaque envoi, reliant ainsi l'Afrique aux principaux hubs mondiaux tels que l'Europe et les États-Unis. 
-            Notre objectif est de fournir un service aérien sur mesure, adapté à vos besoins de livraison express, tout en garantissant des solutions logistiques flexibles et efficaces.
+    </div>
+    <section id="services" style="padding: 50px 0; background-color: #b2b2b2;">
+    <div style="max-width: 1200px; margin: auto; text-align: center;">
+        <!-- Titre principal -->
+        <h2>Nos Services</h2>
+        <p style="font-size: 1.2em; color: #333; margin-bottom: 40px;">
+            Découvrez nos solutions pour répondre à tous vos besoins en matière de transport de colis.
         </p>
-        </div>
-    </section>
 
-    <section id="stats">
+        <!-- Conteneur des cartes de services -->
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+            <!-- Service 1 -->
+            <div style="background: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; width: 300px; text-align: center;">
+                <img src="VUE/media/livraison.jpg" alt="Livraison Express" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="font-size: 1.5em; margin-bottom: 10px;">Livraison Express</h3>
+                <p style="font-size: 1em; color: #666;">Transport rapide pour vos colis urgents, livraison le jour même disponible.</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div style="background: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; width: 300px; text-align: center;">
+                <img src="VUE/media/international.png" alt="Transport International" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="font-size: 1.5em; margin-bottom: 10px;">Transport International</h3>
+                <p style="font-size: 1em; color: #666;">Envoyez vos colis partout dans le monde avec suivi en temps réel.</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div style="background: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; width: 300px; text-align: center;">
+                <img src="VUE/media/solutions.png" alt="Assurance Colis" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="font-size: 1.5em; margin-bottom: 10px;">Solutions </h3>
+                <p style="font-size: 1em; color: #666;">Bénéficez des solutions que nous proposons aux entreprises et aux particuliers .</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="stats" style="background-color: #f4f4f4;">
         <div>
             <h2>Statistiques</h2>
             <div class="stats-box">
@@ -95,12 +98,105 @@
                     <p>GP Disponibles</p>
                 </div>
                 <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>conteneurs débarqués</p>
+                </div>
+                <div class="stat-item">
                     <h3>1200+</h3>
                     <p>Commandes Traitées</p>
                 </div>
             </div>
         </div>
     </section>
+
+<section id="news" style="padding: 50px 0; background-color: #b2b2b2;">
+    <div style="max-width: 1200px; margin: auto; text-align: center;">
+        <!-- Titre principal -->
+        <h2 style="font-size: 2.5em; margin-bottom: 20px;">Actualités</h2>
+        <p style="font-size: 1.2em; color: #333; margin-bottom: 40px;">
+            Restez informé des dernières nouvelles et mises à jour de nos services.
+        </p>
+
+        <!-- Conteneur des articles -->
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+            <!-- Article 3 -->
+            <div style="background: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; width: 300px; text-align: left;">
+                <img src="VUE/media/NourouDarayni_promo.jpg" alt="Système de suivi amélioré" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="font-size: 1.5em; margin-bottom: 10px;">PROMO FIN D'ANNEE</h3>
+                <h4>livraison gratuit partout au Sénégal</h4>
+                <p style="font-size: 1em; color: #666;">Notre services vous offre tous les livraison dans le senegal durant le mois de decembre.</p>
+                <a href="VUE/interface_user/Actu.php#2" style="color: #007BFF; text-decoration: none; font-weight: bold;">Lire la suite &rarr;</a>
+            </div>
+
+            <!-- Article 2 -->
+            <div style="background: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; width: 300px; text-align: left;">
+                <img src="VUE/media/dispo.jpg" alt="Extension du réseau" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="font-size: 1.5em; margin-bottom: 10px;">Extension de notre réseau international</h3>
+                <p style="font-size: 1em; color: #666;">Nous élargissons notre couverture pour inclure de nouveaux pays en Amerique et en Europe.</p>
+                <a href="VUE/interface_user/Actu.php#2" style="color: #007BFF; text-decoration: none; font-weight: bold;">Lire la suite &rarr;</a>
+            </div>
+
+            <!-- Article 1 -->
+            <div style="background: #fff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; width: 300px; text-align: left;">
+                <img src="VUE/media/semaine1.jpg" alt="Nouvelle option de livraison" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="font-size: 1.5em; margin-bottom: 10px;">Nouvelle option de livraison rapide</h3>
+                <p style="font-size: 1em; color: #666;">Découvrez notre tout nouveau service de livraison disponible deux fois tous les semaines.</p>
+                <a href="VUE/interface_user/Actu.php#1" style="color: #007BFF; text-decoration: none; font-weight: bold;">Lire la suite &rarr;</a>
+            </div>
+        </div>
+    </div>
+    </section>
+    
+    <section id="about" style="padding: 50px 0; background-color: #f4f4f4;">
+    <div style="max-width: 1200px; margin: auto; text-align: center;">
+        <!-- Titre principal -->
+        <h2>À propos</h2>
+        <p style="font-size: 1.2em; color: #333; margin-bottom: 40px;">
+            Bienvenue sur notre plateforme de services de transport, facilitant les échanges entre l'Afrique et le reste du monde.
+        </p>
+    </div>
+
+    <!-- Conteneur principal -->
+    <div style="width: 80%; margin: auto; display: grid;  gap: 60px; align-items: start;">
+        <!-- Bloc 1 : Transport maritime -->
+        <div>
+            <img src="VUE/media/propos3.jpg" alt="Transport maritime" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+            <h3 style="font-size: 1.5em; margin-bottom: 10px;">À propos du transport maritime</h3>
+            <p style="font-size: 1em; color: #333; line-height: 1.6; margin-bottom: 70px;">
+                Le transport maritime est l'une des méthodes les plus fiables et économiques pour acheminer des marchandises à travers le monde. Grâce à des                          portuaires modernes et des navires équipés, il permet de transporter une grande variété de colis, allant des petits paquets aux conteneurs                            volumineux. Ce mode de transport garantit sécurité, suivi efficace, et tarifs compétitifs.
+            </p>
+        
+        <!-- Bloc 2 : Présentation de l'entreprise -->
+        
+            <img src="VUE/media/propos1.jpg" alt="Nourou Darayni Services" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+            <h3 style="font-size: 1.5em; margin-bottom: 10px;">À propos de notre entreprise</h3>
+            <p style="font-size: 1em; color: #333; line-height: 1.6; margin-bottom: 70px;">
+                Depuis notre création, Nourou Darayni Services s’est spécialisée dans le transport de colis entre l'Afrique et les grandes métropoles                                 internationales. Grâce à une équipe dédiée et à des partenaires fiables, nous offrons des services personnalisés par voie aérienne ou maritime,                       combinant expertise locale et réseau international pour répondre aux besoins de nos clients.
+            </p>
+
+        <!-- Bloc 3 : Transport aérien -->
+        
+            <img src="VUE/media/propos2.jpg" alt="Transport aérien" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+            <h3 style="font-size: 1.5em; margin-bottom: 10px;">À propos du transport aérien</h3>
+            <p style="font-size: 1em; color: #333; line-height: 1.6; margin-bottom: 70px;">
+                Le transport aérien est la solution la plus rapide et efficace pour expédier des colis sur de longues distances. Idéal pour les envois urgents ou les                 produits de valeur, il garantit une livraison rapide et un haut niveau de sécurité. Nous connectons l'Afrique aux principaux hubs mondiaux, en                    assurant un suivi rigoureux et des solutions logistiques flexibles.
+            </p>
+
+            <div class="button" style="margin-bottom: 70px; margin-top: 20px;">
+                <a href="VUE/interface_user/propos.php" style="color: #800000; text-decoration: none; font-size: 20px; font-weight: bold;">Lire la suite &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" style="padding: 50px 0; background-color: #b2b2b2; text-align: center;">
+    <h2>Contactectez nous</h2>
+    <h3  style="font-size: 1.5em; margin-bottom: 10px;">Nous serons ravis de pouvoir repondre à vos questions et d'aporter des precisions a vos doutes.</h3>
+    <div class="button" style="margin-bottom: 50px; margin-top: 30px;">
+        <button onclick="window.location.href='VUE/interface_user/propos.php';">prendre contact</button>
+    </div>
+</section>
+
     <footer class="site-footer">
         <div class="footer-content">
             <p>&copy; 2024 Nourou Darayni service shipping compagny. Tous droits réservés.</p>
@@ -112,4 +208,16 @@
         </div>
     </footer>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const menuIcon = document.querySelector(".menu");
+    const navLinks = document.querySelector(".menuV");
+
+    if (menuIcon && navLinks) {
+        menuIcon.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    }
+    });
+</script>
 </html>

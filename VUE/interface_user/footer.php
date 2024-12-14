@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-<footer class="site-footer">
+    <?php include 'contactUs.php'; ?>
+    <footer class="site-footer">
+        
         <div class="footer-content">
             <p>&copy; 2024 Nourou Darayni service shipping compagny. Tous droits réservés.</p>
             <ul class="social-links">

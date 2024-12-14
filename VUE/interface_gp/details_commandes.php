@@ -14,8 +14,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
     <link rel="stylesheet" href="style_gp.css">
-    <title>Document</title>
+    <title>Commandes - Nourou Darayni Services</title>
 </head>
 <body>
     <div class="admin-container">

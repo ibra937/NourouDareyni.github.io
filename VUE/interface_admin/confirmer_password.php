@@ -11,7 +11,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_admin.css">
+    <link rel="shortcut icon" type="x-icon" href="VUE/media/logo-tete.png">
+    <link rel="stylesheet" href="Style_admin.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,13 +23,14 @@
     $id=$_POST['del'];
     ?>
     <div class='container'>
-    <h2> Etes-vous sure de vouloir supprimer cette commandes?</h2>
-    <form action='../../CLASS/control.php' method='POST'>
-    <input type="hidden" name="control" value="<?php echo($control); ?>">
-    <input type="hidden" name="del" value="<?php echo($id); ?>">
-    <button class='del-btn'>Oui</button>
-    </form><br>
-    <button class='del-btn'><a href='gestion_commandes.php'>Non</a></button>
+        <img src="../media/Confirmed-amico.png" style="width: 50%; height: 300px; margin-left: 25%;">
+        <h2> Etes-vous sure de vouloir supprimer cette commandes?</h2>
+        <form action='../../CLASS/control.php' method='POST'>
+            <input type="hidden" name="control" value="<?php echo($control); ?>">
+            <input type="hidden" name="del" value="<?php echo($id); ?>">
+            <button class='del-btn'>Oui</button>
+        </form><br>
+        <button class='del-btn'><a href='commandes_attentes.php'>Non</a></button>
     </div>
 </body>
 </html>

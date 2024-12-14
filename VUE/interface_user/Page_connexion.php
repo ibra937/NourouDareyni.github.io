@@ -3,26 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
     <link rel="stylesheet" href="style.css">
+    <title>Connexion - Nourou Darayni Service</title>
 </head>
 <body>
 
-    <!-- Navbar -->
-       <!-- Navbar -->
-    <header class="site-header">
-    <div class="log">
-      <a href="index.html"><img src="../media/logo.png" alt="" class="logo">NOUROU DARAYNI</a>
-    </div> 
-    </header>
-    <nav class="navbar">
-        <ul>
-            <li><a href="../../index.html">Accueil</a></li>
-        </ul>
-    </nav>
+    <a href="../../index.html"><img src="../media/home.png" style="width: 5%; height: 40px; margin-left: 2%; margin-top: 20px;"></a>
 
     <!-- Formulaire de connexion -->
-    <div class="container">
+    <div class="container-form" >
         <h2>Connexion</h2>
         <form action="../../CLASS/control.php" method="POST">
             <?php
@@ -42,10 +32,12 @@
             <input type="hidden" name="control" value="connexion">
             <button type="submit">Se connecter</button>
         </form>
-        <br>
-        <p>Je n'ai pas de compte! <br> <a href="Page_inscription.php">M'inscrire</a></p> 
+        <a href="recup_password.php">
+           Mot de passe oublié !
+        </a>
+        <p align="center">Je n'ai pas de compte! <br> <a href="Page_inscription.php">M'inscrire</a></p> 
         
     </div>
-    <?php include 'footer.php'; ?>
+    
 </body>
 </html>

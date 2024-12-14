@@ -3,30 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
     <link rel="stylesheet" href="style.css">
+    <title>Inscription - Nourou Darayni Services</title>
 </head>
 <body>
-
-    <!-- Navbar -->
-       <!-- Navbar -->
-    <header class="site-header">
-    <div class="log">
-      <a href="../index.html"><img src="../media/logo.png" alt="" class="logo">NOUROU DARAYNI</a>
-    </div> 
-    </header>
-    <nav class="navbar">
-        <ul>
-            <li><a href="../../index.html">Accueil</a></li>
-        </ul>
-    </nav>
+<a href="../../index.html"><img src="../media/home.png" style="width: 5%; height: 40px; margin-left: 2%; margin-top: 20px;"></a>
 
     <!-- Formulaire d'inscription -->
-    <div class="container">
+    <div class="container-form">
         <h2>Inscription</h2>
+        <?php
+            echo(@$_GET['inscription']);
+        ?>
         <form action="../../CLASS/control.php" method="POST">
-            <label for="name">Nom complet :</label>
-            <input type="text" id="name" name="name" pattern="[A-Za-z\s]+" title="Veuillez n'utiliser que des lettres." required>
+            <label for="name">Prenom :</label>
+            <input type="text" id="name" name="prenom" pattern="[A-Za-z\s]+" title="Veuillez n'utiliser que des lettres." required>
+
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="nom" pattern="[A-Za-z\s]+" title="Veuillez n'utiliser que des lettres." required>
 
             <label for="username">Nom d'utilisateur :</label>
             <input type="text" id="username" name="username" required>
@@ -36,14 +31,13 @@
             
             <label for="phone">Téléphone :</label>
             <select id="indicatif" name="indicatif" required class="indicatif">
-                <option value="Senegal(+221)">Senegal(+221)</option>
-                <option value="Usa(+1)">Usa(+1)</option>
+                <option value="+221">Senegal(+221)</option>
+                <option value="+1">Usa(+1)</option>
             </select>
-            <input type="phone" id="phone" name="phone" pattern="\d+" title="Veuillez entrer uniquement des chiffres." required class="phone">
+            <input type="phone" id="phone" name="phone" pattern="\d+" title="Veuillez entrer uniquement des chiffres." required class="num">
 
             <label for="adress">Localisation :</label>
-            <select id="adress" name="adress" required>
-                <option value="">--Sélectionnez--</option>
+            <select id="adress" name="adress" placeholder="--selectionnez--" required>
                 <option value="Dakar">Dakar</option>
                 <option value="Banlieue">Banlieue</option>
                 <option value="Thies">Thies</option>
@@ -53,14 +47,15 @@
             </select>
 
             <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password0" minlength="8" title="Au moins 8 caractères." required>
+            
+            <label for="password">Confirmer votre mot de passe :</label>
+            <input type="password" id="password" name="password1" minlength="8" title="Au moins 8 caractères." required>
             
             <input type="hidden" name="control" value="inscription">
             <button type="submit">S'inscrire</button>
         </form>
-        <br>
         <p>J'ai déja un compte! <br> <a href="Page_connexion.php">Me connecter</a></p> 
     </div>
-    <?php include 'footer.php'; ?>
 </body>
 </html>

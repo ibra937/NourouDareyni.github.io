@@ -13,8 +13,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_admin.css">
-    <title>Document</title>
+    <link rel="shortcut icon" type="x-icon" href="../media/logo-tete.png">
+    <link rel="stylesheet" href="Style_admin.css">
+    <title>Utilisateurs - Nourou Darayni Services</title>
 </head>
 <body>
     <div class="admin-container">
@@ -64,7 +65,10 @@
                 ?>
             </div>
             </div>
-
+            <details>
+            <summary>
+                <h1 align="center" style="color: #800000; cursor: pointer;">Plus de modifications</h1>
+            </summary>
             <div class="container">
             <h2>Modifier mes informations :</h2>
             <?php
@@ -89,7 +93,7 @@
             <label for="adresse">Adresse :</label>
             <input type="text" id="adresse" name="adresse" value="<?php echo htmlspecialchars($user['adresse']); ?>" required>
             
-            <input type="hidden" name="control" value="mettre_jour">
+            <input type="hidden" name="control" value="mettre_jourad">
             <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
             <button type="submit">Mettre à jour</button>
         </form>
@@ -109,11 +113,12 @@
             <label for="password">confirmation du mot de passe :</label>
             <input type="password" id="password" name="password2" required>
 
-            <input type="hidden" name="control" value="motpass">
-            <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+            <input type="hidden" name="user_id" value="<?php echo $id; ?>">
+            <input type="hidden" name="control" value="motpassad">
             <button type="submit">Mettre à jour</button>
         </form>
         </div>
+        </details>
         </div>
     </div>
 </body>
